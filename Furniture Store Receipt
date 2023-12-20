@@ -1,0 +1,61 @@
+"""
+This is a receipt project that stores the names and prices of a furniture store’s catalog in variables and then prints a receipt with an itemization to the output terminal.
+"""
+
+#Items
+
+lovely_loveseat_description = "\n\nLovely Loveseat. Tufted polyester blend on wood. 32 inches high x 40 inches wide x 30 inches deep. Red or white." 
+
+lovely_loveseat_price = 254 #loveseat price
+
+
+
+stylish_settee_description = "\n\nStylish Settee. Faux leather on birch. 29.50 inches high x 54.75 inches wide x 28 inches deep. Black."
+
+stylish_settee_price  = 180.50 #settee price
+
+
+
+luxurious_lamp_description = "\n\nLuxurious Lamp. Glass and iron. 36 inches tall. Brown with cream shade"
+
+luxurious_lamp_price = 52.15 #lamp price
+
+#--------------------------------------
+#Sales tax rate
+
+sales_tax = .088 
+
+customer_one_total = 0 #Initial total
+
+customer_one_itemization = "" #list of the descriptions of purchases
+
+#--------------------------------------
+
+# purchase a loveseat, add a price to the total and add the description to the itemization
+
+customer_one_total += lovely_loveseat_price
+
+customer_one_itemization += lovely_loveseat_description
+
+# purchase a lamp, add a price to the total and add the description to the itemization
+
+customer_one_total += luxurious_lamp_price
+
+customer_one_itemization += luxurious_lamp_description
+
+#--------------------------------------
+
+# calculate the sales tax and then add it to the total cost
+
+customer_one_tax = customer_one_total * sales_tax
+
+customer_one_total += customer_one_tax 
+
+#--------------------------------------
+# print a receipt with an itemization
+print("Customer One Items:")
+print(customer_one_itemization)
+
+#print the total amount due
+print("\nCustomer One Total:")
+print(customer_one_total)
