@@ -1,0 +1,61 @@
+# organize some sales data of a pizza shop using Python.
+
+#create a list of toppings
+
+toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives", "anchovies", "mushrooms"]
+
+#keep track of the cost of each pizza slice
+
+prices = [2, 6, 1, 3, 2, 7, 2]
+
+#count the number of occurrences of 2 in the prices list, store the result, and print it out
+
+num_two_dollar_slices = prices.count(2)
+print(num_two_dollar_slices)
+#find the length of the toppings list
+
+num_pizzas = len(toppings)
+
+print("We sell {} different kinds of pizza!".format(num_pizzas))
+
+#create a two-dimensional list with the pizza toppings and prices
+
+pizza_and_prices = [
+[2, "pepperoni"],
+[6, "pineapple"],
+[1, "cheese"],
+[3, "sausage"],
+[2, "olives"],
+[7, "anchovies"],
+[2, "mushrooms"]
+]
+
+print("Here is the list: \n{}".format(pizza_and_prices))
+
+#Sort pizza_and_prices so that the pizzas are in the order of increasing price (ascending).
+
+pizza_and_prices.sort()
+
+#Store the first element of pizza_and_prices in a variable called cheapest_pizza. This is the cheapest pizza.
+
+cheapest_pizza = pizza_and_prices[0]
+
+#Store the last element of pizza_and_prices in a variable called priciest_pizza. This is the most expensive pizza.
+
+priciest_pizza = pizza_and_prices[-1]
+
+#A man bought the bought the most expensive pizza, the anchovies pizza, so remove it from the sorted list. We can use the .pop() method
+
+pizza_and_prices.pop()
+
+#add a new topping called "peppers" with a cost of 2.5 in the sorted list relative to the rest of the data.
+
+pizza_and_prices.insert(4, [2.5, "peppers"])
+
+print("\nSomeone bought the anchovies pizza, but there is a peppers pizza on the updated list in sorted order: \n{}".format(pizza_and_prices))
+
+#store the 3 lowest cost pizzas in a list
+
+three_cheapest = pizza_and_prices[-3:]
+
+print("\nThe three cheapest pizzas are \n{}".format(three_cheapest))
