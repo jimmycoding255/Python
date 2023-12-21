@@ -1,0 +1,56 @@
+# This projects analyzes the sales data of a hair salon using loops and list comprehension
+
+#the names of the cuts offered at Carly’s Clippers.
+
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+print("The list of all hairstyles: \n{}".format(hairstyles))
+
+#the price of each hairstyle
+
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+print("The price of all hairstyles: \n{}".format(prices))
+
+#the number of purchases for each hairstyle type in the last week.
+
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+print("The number of purchases for each hairstyle last week: \n{}".format(last_week))
+
+#For example, The hairstyle "bouffant" has an associated price of 30 from the prices list, and was purchased 2 times in the last week as shown in the last_week list.
+
+#We want to find out what the average price of a cut is at the store. avg = total_price / len(prices)
+
+total_price = 0
+
+for price in prices:
+  total_price += price
+
+average_price = total_price / len(prices)
+
+print("The average price of a haircut at this salon is {} dollars.".format(average_price))
+
+# Cut all prices by 5 dollars. Make a new list called new_prices using list comprehension
+
+new_prices = [price - 5 for price in prices]
+
+print("Sale: All hairstyles are 5 dollars off: \n{}".format(new_prices))
+
+#Find last week's total revenue
+
+total_revenue = 0
+
+for i in range(len(hairstyles)):
+  total_revenue += prices[i] * last_week[i]
+
+print("Last week's total revenue is {} dollars.".format(total_revenue))
+
+#find the avergae daily revenue from last week
+
+average_daily_revenue = total_revenue / 7
+print(average_daily_revenue)
+
+#make a new list that advertises all haircuts under 30 dollars from the new_prices list. The list should only have the name of the cut
+
+cuts_under_30 = [hairstyles[i] for i in range(len(new_prices)) if new_prices[i] < 30]
+
+print("Haircuts under 30 dollars: \n{}".format(cuts_under_30))
